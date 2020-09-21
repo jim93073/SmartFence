@@ -72,11 +72,11 @@ if __name__ == '__main__':
             if int(now.strftime("%Y%m%d%H%M%S"))>int((tmp+datetime.timedelta(seconds=10)).strftime("%Y%m%d%H%M%S")):
                 msg = "\nPeople detected, see: https://"+img_path.split('www')[1]+"\nToday's snapshots: https://"+(img_path.split('www')[1]).rsplit("/", 2)[0]+"/"
                 tmp = now
-                line_notify(msg)
+                LineNotify.line_notify(msg)
                 DAN.push('yPerson-I', str(det.get_obj_id()), center_x, center_y, img_path.split('www')[1])
-                time.sleep(1)
                 print(confidence, center_x, center_y)
                 print(img_path)
+                time.sleep(1)
 
     # `yolo.set_listener()` must be before `yolo.start()`
     yolo1.set_listener(on_data)
