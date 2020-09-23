@@ -69,7 +69,7 @@ if __name__ == '__main__':
             confidence = det.get_confidence()
             center_x, center_y = det.get_center()
             
-            if int(now.strftime("%Y%m%d%H%M%S"))>int((tmp+datetime.timedelta(seconds=10)).strftime("%Y%m%d%H%M%S")):
+            if int(now.strftime("%Y%m%d%H%M%S"))>int((tmp+datetime.timedelta(seconds=10)).strftime("%Y%m%d%H%M%S")): # You can add different condition at here
                 msg = "\nPeople detected, see: https://"+img_path.split('www')[1]+"\nToday's snapshots: https://"+(img_path.split('www')[1]).rsplit("/", 2)[0]+"/"
                 tmp = now
                 LineNotify.line_notify(msg)
