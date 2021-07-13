@@ -1,8 +1,8 @@
-cmake==3.18.0
 scikit-build==0.11.1
+cmake
+#cmake==3.18.0 #oroginal
 opencv-python>=4.2.0.0
 numpy>=1.19.1
-tensorflow>=1.14,<2.0
-# or
 # tensorflow-gpu>=1.14,<2.0
-scikit-learn==0.22.2
+# scikit-learn==0.22.2 #oroginal
+scikit-learn
