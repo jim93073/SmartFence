@@ -5,9 +5,9 @@ from .utils import __current_dir
 
 
 if os.environ.get('YOLOTALK_USE_GPU'):
-    so = cdll.LoadLibrary(os.path.join(__current_dir, "./bin/linux_x64_gpu/libyolotalk.so.1.0.1"))
+    so = cdll.LoadLibrary(os.path.join(__current_dir, "bin/linux_x64_gpu/libyolotalk.so.1.0.1"))
 else:
-    so = cdll.LoadLibrary(os.path.join(__current_dir, "./bin/linux_x64_cpu/libyolotalk.so.1.0.1"))
+    so = cdll.LoadLibrary(os.path.join(__current_dir, "bin/linux_x64_cpu/libyolotalk.so.1.0.1"))
 
 
 # struct
