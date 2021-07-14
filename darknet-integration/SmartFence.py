@@ -11,7 +11,7 @@ import DAN
 # Note: this program can only run on Linux
 if __name__ == '__main__':
     # Register
-    #ServerURL = 'http://IP:9999'      #with non-secure connection
+    #ServerURL = 'http://1.iottalk.tw'      #with non-secure connection
     ServerURL = ''
     Reg_addr = '' #if None, Reg_addr = MAC address
 
