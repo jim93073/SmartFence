@@ -50,11 +50,14 @@ def check_file_and_fix(to_test, target, target_checksum, remote_url):
         file_ok = True
         if not os.path.exists(to_test):
             file_ok = False
+        '''
+        # check model hash
         else:
             check_sum = hashlib.md5(open(to_test, 'rb').read()).hexdigest()
             if check_sum != target_checksum:
                 file_ok = False
                 print("Weights file checksum error.")
+        '''
 
         if not file_ok:
             print("{} not exist. Try to download.".format(target))
