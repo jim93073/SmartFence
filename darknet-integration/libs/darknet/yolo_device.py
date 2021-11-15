@@ -108,7 +108,7 @@ class YoloDevice:
             thresh=thresh,
             polygon=vertex,
             output_folder=None,  # File output will handle by python code
-            max_video_queue_size=180,
+            max_video_queue_size=18,
             show_msg=display_message)
 
         self.output_dir = output_dir
@@ -168,10 +168,18 @@ class YoloDevice:
     def __get_output_image_name(self, frame_id, ensure_dir=True):
         folder = os.path.join(
             self.output_dir,
-            "./{}/{}".format(self.get_current_date_string(), self.get_current_hour_string())
+            self.get_current_date_string(),
+            self.get_current_hour_string()            
         )
+        print("Folder:",folder)
         if ensure_dir:
-            os.makedirs(folder, exist_ok=True)
+          try:
+              original_umask = os.umask(0)
+               #os.makedirs(folder, exist_ok=True)
+              os.makedirs(folder, mode=0o777,exist_ok=True)
+          finally:
+              os.umask(original_umask)
+            
         return os.path.join(folder, "{:05d}.jpg".format(frame_id))
 
     def __draw_detections(self, image, _detections):
@@ -221,6 +229,7 @@ class YoloDevice:
 
         def prediction_listener(frame_id, mat, bboxes, file_path):
             # Check if target_classes match
+            print("FRAME ID:"+str(frame_id))
             if self.target_classes is not None:
                 bboxes_temp = []
                 for b in bboxes:
@@ -259,9 +268,9 @@ class YoloDevice:
                     self.__draw_detections(img, new_bbox)
                 img_path = self.__get_output_image_name(frame_id)
                 cv2.imwrite(img_path, img)
-
+            
             self.__listener(frame_id, img, new_bbox, img_path)
-
+        
         self.__prediction_listener = prediction_listener
         self.device.setPredictionListener(self.__prediction_listener)
 
