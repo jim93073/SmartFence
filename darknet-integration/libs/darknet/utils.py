@@ -5,10 +5,10 @@ import hashlib
 import traceback
 from . import __current_dir
 
-CONFIG_FILE_YOLO_V4 = os.path.join(__current_dir, 'weights/yolov4.cfg')
+CONFIG_FILE_YOLO_V4 = os.path.join(__current_dir, 'weights/yolov4-tiny.cfg')
 DATA_FILE_COCO = os.path.join(__current_dir, 'weights/coco.data')
 NAMES_COCO = os.path.join(__current_dir, 'weights/coco.names')
-WEIGHTS_YOLO_V4_COCO = os.path.join(__current_dir, 'weights/yolov4.weights')
+WEIGHTS_YOLO_V4_COCO = os.path.join(__current_dir, 'weights/yolov4-tiny.weights')
 MD5_WEIGHTS_YOLO_V4_COCO = "00a4878d05f4d832ab38861b32061283"
 URL_WEIGHTS_YOLO_V4_COCO = "https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights"
 
@@ -50,14 +50,11 @@ def check_file_and_fix(to_test, target, target_checksum, remote_url):
         file_ok = True
         if not os.path.exists(to_test):
             file_ok = False
-        '''
-        # check model hash
-        else:
+        '''else:
             check_sum = hashlib.md5(open(to_test, 'rb').read()).hexdigest()
             if check_sum != target_checksum:
                 file_ok = False
-                print("Weights file checksum error.")
-        '''
+                print("Weights file checksum error.")'''
 
         if not file_ok:
             print("{} not exist. Try to download.".format(target))
