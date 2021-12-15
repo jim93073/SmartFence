@@ -4,5 +4,7 @@ cmake
 opencv-python>=4.2.0.0
 numpy>=1.19.1
 # tensorflow-gpu>=1.14,<2.0
-# scikit-learn==0.22.2 #oroginal
-scikit-learn
+scikit-learn==0.22.2 #oroginal
+#scikit-learn
+lineTool
+requests
