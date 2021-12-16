@@ -229,7 +229,7 @@ class YoloDevice:
 
         def prediction_listener(frame_id, mat, bboxes, file_path):
             # Check if target_classes match
-            print("FRAME ID:"+str(frame_id))
+            #print("FRAME ID:"+str(frame_id))
             if self.target_classes is not None:
                 bboxes_temp = []
                 for b in bboxes:
