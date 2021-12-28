@@ -171,7 +171,7 @@ class YoloDevice:
             self.get_current_date_string(),
             self.get_current_hour_string()            
         )
-        print("Folder:",folder)
+        # print("Folder:",folder)
         if ensure_dir:
           try:
               original_umask = os.umask(0)
