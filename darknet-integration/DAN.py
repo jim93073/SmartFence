@@ -52,8 +52,8 @@ def ControlChannel():
             else:
                 print('ControlChannel failed due to unknow reasons.')
                 time.sleep(1)
-	    print("[Info] Restarting...")
-	    current_path = os.path.abspath(os.getcwd())            
+            print("[Info] Restarting...")
+            current_path = os.path.abspath(os.getcwd())
             subprocess.call(os.path.join(current_path,"restart_sf.sh"))	
 
 def get_mac_addr():
