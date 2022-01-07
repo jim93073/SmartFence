@@ -51,7 +51,10 @@ def ControlChannel():
                 device_registration_with_retry()
             else:
                 print('ControlChannel failed due to unknow reasons.')
-                time.sleep(1)    
+                time.sleep(1)
+	    print("[Info] Restarting...")
+	    current_path = os.path.abspath(os.getcwd())            
+            subprocess.call(os.path.join(current_path,"restart_sf.sh"))	
 
 def get_mac_addr():
     from uuid import getnode
