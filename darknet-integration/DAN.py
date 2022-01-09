@@ -1,5 +1,7 @@
 import time, random, threading, requests
 import csmapi
+import subprocess
+import os
 
 # example
 profile = {
