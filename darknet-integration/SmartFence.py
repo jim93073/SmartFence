@@ -29,7 +29,7 @@ if __name__ == '__main__':
     #exit()            #if you want to deregister this device, uncomment this line
 
     run = True
-    output_dir = "/home/jim/SmartFence/darknet-integration/output/"    
+    output_dir = "~/SmartFence/darknet-integration/output/"    
     post_img_URL = 'http://panettone.iottalk.tw:12051'
 
     yolo1 = YoloDevice(        
