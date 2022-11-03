@@ -2,7 +2,7 @@
 
 這個Repository是一個Python的library，負責呼叫基於Darknet的C++程式，使用YOLO來辨識影片。
 
-from: https://gitlab.com/lxchen-lab117/yolotalk/darknet-integration/
+from: https://github.com/jim93073/darknet-intergration-in-cpp
 
 ## A. 安裝
 
